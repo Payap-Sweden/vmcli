@@ -61,6 +61,8 @@ users:
     shell: /bin/bash
     ssh-authorized-keys: 
       - $(cat ~/.ssh/id_rsa.pub | head -n 1)
+    primary_group: "$(id -g)"
+    uid: "$UID"
 EOF
 
 # boot into initramfs to modify the disk image
